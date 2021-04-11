@@ -11,10 +11,10 @@ With this tool, I had a foundational framework that had components I can use spe
 
 These three components were the components I needed to be able to give users the ability to scan an image and once scanned, play a video within the frames of the image, all through the users camera. 
 
-1. <a-entity> was the component that allowed us to request access to the users camera device. This was the most essential component as it allowed us to use the users camera to scan for the marker.
+1. `<a-entity>` was the component that allowed us to request access to the users camera device. This was the most essential component as it allowed us to use the users camera to scan for the marker.
 
-2. <a-marker> was the component that created and stored a marker that would be used to contain the video. Once provided access to the users camera, the camera will scan to see if a marker image is in the camera view and if so, trigger an event. In this case, the event that is triggered is the automatic rendering and playing of a video within the marker image frames. 
+2. `<a-marker>` was the component that created and stored a marker that would be used to contain the video. Once provided access to the users camera, the camera will scan to see if a marker image is in the camera view and if so, trigger an event. In this case, the event that is triggered is the automatic rendering and playing of a video within the marker image frames. 
 
-3. <a-video> was the component that rendered the video upon the successful scan of a marker. 
+3. `<a-video>` was the component that rendered the video upon the successful scan of a marker. 
 
 ### Reference
