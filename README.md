@@ -7,7 +7,7 @@ To create this project I used the AFrame.js library. A-Frame is a powerful three
 
 With this tool, I had a foundational framework that had components I can use specifically for creating this experience. The components were `a-marker, a-video, and a-entity`
 
-### <a-marker>, <a-video>, and <a-entity>
+### a-marker, a-video, and a-entity
 
 These three components were the components I needed to be able to give users the ability to scan an image and once scanned, play a video within the frames of the image, all through the users camera. 
 
