@@ -19,4 +19,5 @@ These three components were the components I needed to be able to give users the
 
 ### Reference
 
-<iframe src="https://media.giphy.com/media/zmH7XfhFYlTeXf8A5s/giphy-downsized-large.gif"></iframe>
+![Alt Text](https://media.giphy.com/media/zmH7XfhFYlTeXf8A5s/giphy-downsized-large.gif)
+
