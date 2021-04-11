@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes"> 
+        <meta charset="utf-8">
+        <title>Welcome to The Academy - Rich Music, Sech, Dalex feat. Justin Quiles, Lenny Tavárez, Feid</title>
+        <meta name="description" content="Are you ready to become a part of The Academy? Scan the marker and view our introductory video before applying!">
+        <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="144x144" href="img/android-icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <!-- <link rel="manifest" href="img/manifest.json" crossOrigin="user-credentials"> -->
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    </head> 
+<html>
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <!-- Modified  version of aframe-ar to fire events when markers are found -->
+    <script src="https://cdn.glitch.com/258e87dd-2cf6-4e89-bccc-be709c25ff79%2Faframe-ar.js?1525282400523"></script>
+    <!-- Responding to marker detection events -->
+    <script src="https://cdn.glitch.com/258e87dd-2cf6-4e89-bccc-be709c25ff79%2Faframe-play-on-scan.js?1525282448985"></script>
+    <style>
+        .overlay {
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: rgba(0, 0, 0, 0.85); 
+            z-index: 1000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+        }
+        .center-button{
+            top: 50%;
+        }
+        .center-div {
+            top: 20%;
+            position: relative;
+        }
+        button {
+            height: 50px;
+            line-height: 48px;
+            border: 2px solid #47b475;
+            background: #47b475;
+            color: #fff;
+            width: 280px;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 0 !important;
+            margin: 15px;
+        }
+        .img-div{
+            position: sticky;
+            top: 20%;
+        }
+        .image-100{
+            max-height: 60px;
+        }
+        .vid {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+  <body style='margin : 0px; overflow: hidden;'>
+        <div class="overlay">
+                <div class="img-div">
+                        <img alt="logo" id="richmusic" class="image-100" style="text-align: center;" src="img/SECH_LOGO_W.png">
+                </div>
+            <div class="center-div">
+                <button class="center-button" id="iphone" alt="enterButton">Enter</button>
+            </div>
+        </div> 
+    <a-scene embedded arjs="debugUIEnabled: false; sourceType: webcam;" vr-mode-ui="enabled: false">
+        <a-assets>
+            <video id="dalex" autoplay muted loop="true" playsinline src="img/sintel.mp4" class="vid" alt="video"></video>
+            <video id="sech" autoplay muted loop="true" playsinline src="img/small.mp4" class="vid" alt="sechvideo"></video>
+            <video id="flow" autoplay muted loop="true" playsinline src="img/dolbycanyon.mp4" class="vid" alt="flowvideo"></video>
+            <video id="quiles" autoplay muted loop="true" playsinline src="img/bunny.mp4" class="vid" alt="sechvideo"></video>
+        </a-assets>
+    <a-marker preset="pattern" type="pattern" url="img/dalex.patt" id="dalexMarker">
+        <a-video play-on-scan src="#dalex" position="0 0 0" rotation="-90 0 0" ></a-video>
+    </a-marker>
+    <a-marker preset="pattern" type="pattern" url="img/sech.patt" id="sechMarker">
+        <a-video play-on-scan src="#sech" position="0 0 0" rotation="-90 0 0"></a-video>
+    </a-marker>
+    <a-marker preset="pattern" type="pattern" url="img/flow.patt" id="flowMarker">
+        <a-video play-on-scan src="#flow" position="0 0 0" rotation="-90 0 0"></a-video>
+    </a-marker>
+    <a-marker preset="pattern" type="pattern" url="img/justin.patt" id="quilesMarker">
+        <a-video play-on-scan src="#quiles" position="0 0 0" rotation="-90 0 0"></a-video>
+    </a-marker>
+  	<a-entity camera></a-entity>
+    </a-scene>
+    <script>
+        const overlay = document.querySelector(".overlay");
+        const imgDiv = document.querySelector(".img-div");
+        const iBtn = overlay.querySelector("#iphone");
+        const mainBtn = document.querySelector("#buttonContainer");
+        const dalexVid = document.querySelector("#dalex");
+        const sechVid = document.querySelector("#sech");
+        const flowVid = document.querySelector("#flow");
+        const quilesVid = document.querySelector("#quiles");
+
+        iBtn.addEventListener("click", function() {
+            overlay.style.display = "none";
+
+            quilesVid.autoplay = false;
+            dalexVid.autoplay = false;
+            sechVid.autoplay = false;
+            flowVid.autoplay = false;
+            dalexVid.muted = false;
+            sechVid.muted = false;
+            flowVid.muted = false;
+            quilesVid.muted = false;
+
+            //dalex video
+            
+            
+            dalexVid.loop = false;
+            console.log("Dalex video muted and autoplay removed.")
+            dalexVid.addEventListener('ended',function(){
+                    window.location.href = 'https://richmusicltd.com/theacademy/index.html';
+             });
+
+            //sech video
+          
+            
+            sechVid.loop = false;
+            console.log("Sech video muted and autoplay removed.")
+            sechVid.addEventListener('ended',function(){
+                    window.location.href = 'https://richmusicltd.com/theacademy/index.html';
+             });
+
+            //flow video
+            
+            
+            flowVid.loop = false;
+            console.log("Flow video muted and autoplay removed.")
+            flowVid.addEventListener('ended',function(){
+                    window.location.href = 'https://richmusicltd.com/theacademy/index.html';
+             });
+
+            //quiles video
+
+            quilesVid.loop = false;
+            console.log("Quiles video muted and autoplay removed.")
+            quilesVid.addEventListener('ended',function(){
+                    window.location.href = 'https://richmusicltd.com/theacademy/index.html';
+             });
+            
+        })
+
+        // Dalex Marker Finder
+        var dalexito = document.querySelector("#dalexMarker")
+            dalexito.addEventListener("markerFound", (e)=>{
+                console.log(" dalex found")
+                // setTimeout(function(){
+                //     mainBtn.style.display = "block";
+                     
+                // }, 10000);
+        })
+            dalexito.addEventListener("markerLost", (e)=>{
+            console.log("dalex lost");
+        })
+
+        // Sech Marker Finder
+        var sechito = document.querySelector("#sechMarker")
+            sechito.addEventListener("markerFound", (e)=>{
+                console.log("sech found")
+                // setTimeout(function(){
+                    
+                //      alert("Hello"); 
+                // }, 3000);
+        })
+            sechito.addEventListener("markerLost", (e)=>{
+            console.log("sech lost");
+        })
+
+        // Flow Marker Finder
+        var flowMan = document.querySelector("#flowMarker")
+            flowMan.addEventListener("markerFound", (e)=>{
+                console.log("flow found")
+                // setTimeout(function(){
+                    
+                //      alert("Hello"); 
+                // }, 3000);
+        })
+            flowMan.addEventListener("markerLost", (e)=>{
+            console.log("flow lost");
+        })
+
+        var quilesMan = document.querySelector("#quilesMarker")
+            quilesMan.addEventListener("markerFound", (e)=>{
+                console.log("quiles found")
+                // setTimeout(function(){
+                    
+                //      alert("Hello"); 
+                // }, 3000);
+        })
+            quilesMan.addEventListener("markerLost", (e)=>{
+            console.log("quiles lost");
+        })
+
+
+    </script>
+  </body>
+</html>
+
+
+
