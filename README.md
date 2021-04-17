@@ -9,10 +9,7 @@ To view the demo, follw the instructions below.
 2. Click the "Enter" button and allow the site to access your device.
 3. Once your camera is on, point the camera to any of the following images in the [img folder](https://github.com/felixabreu/Augemented-Reality-Campaign/tree/main/img) and the video should begin playing. 
 
-dalex marker.png
-flow marker.png
-justin marker.png
-sech marker.png
+`dalex marker.png, flow marker.png, justin marker.png, or sech marker.png`
 
 You should be able to use your camera after allowing the website access to your device and point to one of the images above. The video will begin playing, make sure that your device is not Silenced and audio is up to hear the videos. 
 
