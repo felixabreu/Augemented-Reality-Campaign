@@ -1,6 +1,8 @@
 # Augemented-Reality-Campaign
 The Augmented Reality project was a project that I had initially began working on as a way to pitch a new sector marketers can begin taking more advantage of, Virtual Reality (VR) and Augmented Reality (AR).
 
+The unique element to this project is that its super light-weight. This is a mobile experience that anyone with a mobile device can access via the web. Accessibility is a very important factor that should always be considered when coming up with a marketing initiative. How can I make this experience accessible to as many users as possible without requiring too much actions from them? 
+
 ### AFrame JS
 
 To create this project I used the AFrame.js library. A-Frame is a powerful three.js framework, providing a declarative, composable, reusable entity-component structure. HTML is just the tip of the iceberg; developers have unlimited access to JavaScript, DOM APIs, three.js, WebVR, and WebGL.
